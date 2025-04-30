@@ -7,11 +7,11 @@ const LoginBottom = () => {
     };
 
     const GithubClick = () => {
-        window.open("https://github.com/Tomreet/Real-time-chat?tab=readme-ov-file", "_blank");
+        window.open("https://github.com/Tomreet/my-postcard", "_blank");
     };
 
     const DiscordClick = () => {
-        window.open("https://discord.com/", "_blank");
+        window.open("https://discord.gg/hjBD7r4e", "_blank");
     };
 
     const TelClick = () => {
@@ -27,14 +27,14 @@ const LoginBottom = () => {
     return (
         <div className='bottom'>
 
-            <div>
+            <div className='protection'>
                 <dl>
                     <dt>Beta-version</dt>
                     <dd>Тут должен быть какой-то текст</dd> 
                     <dd>&copy; 2025 MrKrabsArt. Все права защищены.</dd> 
                 </dl>  
             </div>
-            <div>
+            <div className='TelMail'>
                 <dl>
                     <dt>Контакты:</dt> 
                     <dd onClick={TelClick}>tel: +7 913 259 91 38</dd> 
