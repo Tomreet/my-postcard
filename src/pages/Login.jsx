@@ -16,26 +16,47 @@ const Login = () => {
     }
   };
 
+  // Функция для универсального входа
+  const handleUniversalLogin = (e) => {
+    e.preventDefault();
+    // Устанавливаем тестовые данные и сразу выполняем вход
+    const demoUsername = 'universal_user';
+    const demoPassword = 'universal_password';
+    
+    setUsername(demoUsername);
+    setPassword(demoPassword);
+    
+    // Используем напрямую тестовые данные, не дожидаясь обновления состояния
+    if (login(demoUsername, demoPassword)) {
+      navigate('/dashboard');
+    }
+  };
+
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
         <h2>Дембельский календарь</h2>
         <LoginImput
-            label="Логин:"
-            type="text"
-            value={username}
-            set={setUsername}
+          label="Логин:"
+          type="text"
+          value={username}
+          set={setUsername}
         />
 
         <LoginImput
-            label="Пароль:"
-            type="password"
-            value={password}
-            set={setPassword}
+          label="Пароль:"
+          type="password"
+          value={password}
+          set={setPassword}
         />
 
         {error && <div className="error-message">{error}</div>}
-        <button type="submit">Войти</button>
+        <button type="submit">
+          Войти
+        </button>
+        <button type="button" onClick={handleUniversalLogin}>
+          Универсальный
+        </button>
       </form>
     </div>
   );
