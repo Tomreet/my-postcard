@@ -10,5 +10,11 @@ export const users = [
       username: "папа",
       password: "папа123",
       notes: ["Дорогой папа...", "Проверяй..."],
+    },
+    {
+      id: 3,
+      username: "universal_user",
+      password: "universal_password",
+      notes: ["Тест", "Тест..."],
     }
   ];
