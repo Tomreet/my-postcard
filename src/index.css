@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 /* |---=VARIABLES=---| */
 :root {
   --army-green: #4d6447;
@@ -10,14 +16,12 @@
 /* |---=END_VARIABLES=---| */
 
 #particles {
-  position: absolute;
+      position: fixed;
+    top: 20px;    /* Отступ сверху */
+    left: 20px; 
 }
 
 /* |---=END_VARIABLES=---| */
-
-#particles {
-  position: absolute;
-}
 
 /* |---=ANIMATION=---| */
 @property --gradient-pos {
@@ -304,6 +308,170 @@ button[type="button"] {
 .lock-icon {
   margin-bottom: 0.5rem;
 }
+
+.countdown {
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.days {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 100px;
+}
+
+.days-dop{
+  font-weight: 600;
+  font-style: normal;
+  font-size: 80px;
+  margin: 0.1em;
+  filter: blur(4px);
+}
+
+.days-dop-plus {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  margin: 0.1em;
+  filter: blur(6px);
+}
+
+.view-controls {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.view-controls button {
+  background: linear-gradient(45deg, var(--army-green), #3a54358c);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+      );
+      transition: 0.5s;
+      z-index: -1;
+  z-index: 10;
+}
+}
+
+.view-controls button.active {
+  background: linear-gradient(45deg, #4c8a3c, #54ad428c);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+      );
+      transition: 0.5s;
+      z-index: -1;
+    }
+    &:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 
+        0 5px 20px rgba(156, 255, 143, 0.4),
+        0 0 15px rgba(156, 255, 143, 0.3) inset;
+    }
+    &:hover::before {
+      left: 100%;
+    }
+}
+
+.content-view.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content-view.album {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.user-card {
+  padding: 20px;
+  border-radius: 8px;
+  background: #ffffff00;
+}
+
+.notes-list {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.album-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.note-card {
+  flex: 1 1 25%;
+  height: 20%;
+  width: 20%;
+  margin: 5px;
+}
+
+.album-grid img {
+  padding: 0.4em;
+  border-radius: 4px;
+  background-color: #474e64;
+  width: 100%;
+  height: 100%;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+
 /* |---=END_BASE_STYLES=---| */
 
 /* |---=LAPTOPS=---| */
