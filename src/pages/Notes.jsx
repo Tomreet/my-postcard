@@ -9,7 +9,7 @@ const Notes = () => {
   return (
     <div className="notes-container">
       <h2>Личные записки для {user}</h2>
-      <div className="notes-list">
+      <div className="notes-lista">
         {notesContent.map((note) => (
           <div key={note.id} className="note-item">
             <LockedContent 

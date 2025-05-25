@@ -20,7 +20,7 @@ const Login = () => {
   const handleUniversalLogin = (e) => {
     e.preventDefault();
     // Устанавливаем тестовые данные и сразу выполняем вход
-    const demoUsername = 'universal_user';
+    const demoUsername = 'Инопланетянин';
     const demoPassword = 'universal_password';
     
     setUsername(demoUsername);
