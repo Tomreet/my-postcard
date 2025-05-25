@@ -30,7 +30,7 @@ const LoginBottom = () => {
             <div className='protection'>
                 <dl>
                     <dt>Beta-version</dt>
-                    <dd>Тут должен быть какой-то текст...</dd> 
+                    <dd>Тут должен быть какой-то текст</dd> 
                     <dd>&copy; 2025 MrKrabsArt. Все права защищены.</dd> 
                 </dl>  
             </div>

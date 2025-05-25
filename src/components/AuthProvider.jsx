@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useState, useContext, useEffect, useCallback, useMemo } from 'react';
 import { users } from '../data/users';
 
 const AuthContext = createContext();
@@ -7,12 +7,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    const savedUser = localStorage.getItem('dembel-user');
-    if (savedUser) setUser(JSON.parse(savedUser));
-  }, []);
-
-  const login = (username, password) => {
+  // Мемоизированные функции
+  const login = useCallback((username, password) => {
     const foundUser = users.find(u => 
       u.username === username && u.password === password
     );
@@ -26,18 +22,37 @@ export const AuthProvider = ({ children }) => {
     
     setError('Неверные данные для входа');
     return false;
-  };
+  }, []);
 
-  const logout = () => {
+  const logout = useCallback(() => {
     setUser(null);
     localStorage.removeItem('dembel-user');
-  };
+  }, []);
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem('dembel-user');
+    if (savedUser) setUser(JSON.parse(savedUser));
+  }, []);
+
+  // Стабильный объект контекста
+  const value = useMemo(() => ({
+    user,
+    login,
+    logout,
+    error
+  }), [user, error, login, logout]);
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, error }}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within AuthProvider');
+  }
+  return context;
+};
