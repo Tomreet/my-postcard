@@ -59,6 +59,13 @@ npm run build
 | Ноутбуки         | ✅ Идеальная|
 | Десктопы         | ✅ Идеальная|
 
+## 👾 Скриншоты 
+
+![Screenshot_2025-05-28-19-27-36-795_com android chrome-edit](https://github.com/user-attachments/assets/c99c457b-009f-49e9-bae3-cb85ecea9058)
+![Screenshot_2025-05-28-19-27-56-951_com android chrome-edit](https://github.com/user-attachments/assets/21378f50-9cef-4f50-af58-bccdf66404fa)
+![Screenshot_2025-05-28-19-28-46-923_com android chrome-edit](https://github.com/user-attachments/assets/c4f121b9-65ca-4403-b798-4f759ea3c280)
+![Screenshot_2025-05-28-19-29-08-112_com android chrome-edit](https://github.com/user-attachments/assets/c3521863-eb26-496d-831f-46de7712f941)
+
 ## 📬 Обратная связь
 Нашли баг или есть предложения?  
 Свяжитесь с разработчиком:  
