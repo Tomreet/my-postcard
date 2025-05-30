@@ -4,7 +4,7 @@ import { useAuth } from '../components/AuthProvider';
 
 const Dashboard = () => {
   const { user } = useAuth();
-  const dischargeDate = '2026-05-29';
+  const dischargeDate = '2026-05-30';
   const [viewMode, setViewMode] = useState('list');
 
   return (
